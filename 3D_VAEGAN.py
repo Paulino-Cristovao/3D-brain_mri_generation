@@ -57,7 +57,7 @@ parser.add_argument('--gamma', default=1, type=int, metavar='gamma',
 
 
 
-root_save = '/I3M_IO_CALCULS_2/allInOne/3DVAEGAN_0/'
+root_save = '3DVAEGAN/'
 
 # create folder for saving training and test results
 global args
@@ -81,8 +81,7 @@ k = 2000 # save results at each k
 device = torch.device("cuda:0" if (torch.cuda.is_available() and args.ngpu > 0) else "cpu")
 
 # Data loader
-#data_dir_train = '/I3M_IO_CALCULS_2/3D_240bigans/BraTS2021_3D50.npz'
-data_dir_train = '/I3M_IO_CALCULS_2/allInOne/Data/BraTS2021_3D30.npz'
+data_dir_train = 'BraTS2021.npz'
 
 def Data(dir):
     data_load = np.load(dir)
