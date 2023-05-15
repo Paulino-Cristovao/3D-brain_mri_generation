@@ -56,7 +56,7 @@ parser.add_argument('--gamma', default=20, type=int, metavar='gamma',
 global args
 args = parser.parse_args()
 
-root_save = '/I3M_IO_CALCULS_2/allInOne/2DGAN/'
+root_save = '2DGAN/'
 
 if not os.path.isdir(str(args.features)):
 	os.mkdir(root_save+str(args.features))
@@ -76,8 +76,7 @@ k = 2000
 device = torch.device("cuda:0" if (torch.cuda.is_available() and args.ngpu > 0) else "cpu")
 
 # Data loader
-#data_dir_train = '/I3M_IO_CALCULS_2/2d_240bigans/BraTS2021_2d100.npz'
-data_dir_train = '/I3M_IO_CALCULS_2/allInOne/Data/BraTS2021_2D500.npz'
+data_dir_train = 'BraTS2021.npz'
 
 def Data(dir):
     data_load = np.load(dir)
